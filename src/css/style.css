@@ -1,0 +1,34 @@
+body {
+  background: linear-gradient(to right, #9dc8c8, #73abaf, #73abaf, #9dc8c8);
+  justify-content: center;
+}
+
+.result-table {
+  height: 50%;
+  width: 100%;
+  border: 1px solid rgb(0, 0, 0);
+}
+
+.table-header {
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 8px;
+}
+
+.table-column {
+  border: 1px solid rgb(0, 0, 0);
+  text-align: center;
+}
+
+.table-column__input {
+  text-align: center;
+  background: transparent;
+  border: none;
+}
+
+.table-column__input:focus {
+  outline: none;
+}
+
+.result {
+  text-align: right;
+}

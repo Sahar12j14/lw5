@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <script src="https://twitter.github.io/typeahead.js/js/handlebars.js"></script>
+    <script id="store-template" type="text/x-handlebars-template">
+      <tr>
+        <th class='table-header'>
+          Наименование товара
+        </th>
+        <th class='table-header'>
+          Количество
+        </th>
+        <th class='table-header'>
+          Цена за ед изм. руб
+        </th>
+        <th class='table-header'>
+          Стоимость, руб
+        </th>
+      </tr>
+      {{#each productsList}}
+        <tr>
+          <td class='table-column'>
+            <input
+              type='text'
+              class='{{id}} table-column__input-name table-column__input'
+              readonly
+              value='{{name}}'
+            />
+          </td>
+          <td class='table-column'>
+            <input
+              type='text'
+              class='{{id}} table-column__input-count table-column__input'
+              readonly
+              value='{{count}}'
+            />
+          </td>
+          <td class='table-column'>
+            <input
+              type='text'
+              class='{{id}} table-column__input-priceForOne table-column__input'
+              readonly
+              value='{{priceForOne}}'
+            />
+          </td>
+          <td class='table-column'>
+            {{priceTotal}}
+          </td>
+        </tr>
+      {{/each}}
+      <tr>
+        <td colspan='3' class='result table-column'>
+          ИТОГ:
+        </td>
+        <td class='table-column' id='resultCount'>
+          {{resultTotal}}
+        </td>
+      </tr>
+    </script>
+    <table id="result-table" class="result-table"></table>
+  </body>
+</html>
