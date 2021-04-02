@@ -1,7 +1,3 @@
-/* eslint-disable no-param-reassign */
-/* eslint-disable comma-dangle */
-/* eslint-disable no-loop-func */
-/* eslint-disable no-undef */
 import {
   countTotal,
   setNameProduct,
@@ -34,12 +30,12 @@ let productsList = [
     priceTotal: 1000,
   },
 ];
-let resultTotal = 0;
 function checkIsNumber(value) {
   return value.match(/^\d*[.]?\d+$/);
 }
-window.onload = function upload() {
+window.onload = function loading() {
   function updateUI() {
+    var resultTotal = 0;
     resultTotal = setResultTotal(productsList);
     const source = document.getElementById('store-template').innerHTML;
     const template = Handlebars.compile(source);

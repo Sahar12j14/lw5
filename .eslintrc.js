@@ -1,4 +1,8 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable no-param-reassign */
+/* eslint-disable comma-dangle */
+/* eslint-disable no-loop-func */
+/* eslint-disable no-undef */
 module.exports = {
   env: {
     browser: true,
