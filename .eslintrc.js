@@ -15,5 +15,9 @@ module.exports = {
   },
   rules: {
     'linebreak-style': 0,
+    'no-param-reassign': 0,
+    'comma-dangle': 0,
+    'no-loop-func': 0,
+    'no-undef': 0,
   },
 };

@@ -33,7 +33,7 @@ let productsList = [
 function checkIsNumber(value) {
   return value.match(/^\d*[.]?\d+$/);
 }
-window.onload = function loading() {
+window.onload = function () {
   function updateUI() {
     var resultTotal = 0;
     resultTotal = setResultTotal(productsList);

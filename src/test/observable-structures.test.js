@@ -1,9 +1,7 @@
 /* eslint-disable no-undef */
 const productMethods = require('../utils/observable-structures');
 
-function poke() {
-  return 1;
-}
+const mock = jest.fn();
 test('checking the created observable object', () => {
   const productElements = [
     {
@@ -29,20 +27,16 @@ test('checking the created observable object', () => {
     },
   ];
   let resultList = [];
-  resultList[0] = productMethods.createObservableObject(productElements[0], poke);
-  resultList = productMethods.createObservableArray(resultList, poke);
+  resultList[0] = productMethods.createObservableObject(productElements[0], mock);
   resultList[0].count = 1;
   expect(resultList[0].count).toEqual(1);
-  expect(resultList[0].count).not.toEqual(2);
-  expect(resultList[0].count).not.toEqual('String');
-  expect(resultList[0].count).not.toEqual('');
   expect(productMethods.createObservableObject(productElements[0], 1)).toEqual(false);
-  expect(productMethods.createObservableObject(1, poke)).toEqual(false);
-  expect(productMethods.createObservableObject(false, poke)).toEqual(false);
-  expect(productMethods.createObservableObject(null, poke)).toEqual(false);
+  expect(productMethods.createObservableObject(1, mock)).toEqual(false);
+  expect(productMethods.createObservableObject(false, mock)).toEqual(false);
+  expect(productMethods.createObservableObject(null, mock)).toEqual(false);
   expect(productMethods.createObservableObject(null, 1)).toEqual(false);
   expect(productMethods.createObservableObject(productElements[0], '')).toEqual(false);
-  expect(productMethods.createObservableObject('', poke)).toEqual(false);
+  expect(productMethods.createObservableObject('', mock)).toEqual(false);
 });
 test('checking the created observable array', () => {
   const productElements = [
@@ -69,15 +63,15 @@ test('checking the created observable array', () => {
     },
   ];
   let resultList = [];
-  resultList[0] = productMethods.createObservableObject(productElements[0], poke);
-  resultList = productMethods.createObservableArray(resultList, poke);
+  resultList[0] = productMethods.createObservableObject(productElements[0], mock);
+  resultList = productMethods.createObservableArray(resultList, mock);
   expect(productMethods.createObservableArray(resultList, 1)).toEqual(false);
-  expect(productMethods.createObservableArray(1, poke)).toEqual(false);
-  expect(productMethods.createObservableArray(false, poke)).toEqual(false);
-  expect(productMethods.createObservableArray(null, poke)).toEqual(false);
+  expect(productMethods.createObservableArray(1, mock)).toEqual(false);
+  expect(productMethods.createObservableArray(false, mock)).toEqual(false);
+  expect(productMethods.createObservableArray(null, mock)).toEqual(false);
   expect(productMethods.createObservableArray(null, 1)).toEqual(false);
   expect(productMethods.createObservableArray(resultList, '')).toEqual(false);
-  expect(productMethods.createObservableArray('', poke)).toEqual(false);
+  expect(productMethods.createObservableArray('', mock)).toEqual(false);
   resultList = 1;
   expect(resultList).toEqual(1);
   expect(resultList).not.toEqual(2);
