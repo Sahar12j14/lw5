@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const moduleProduct = require('../js/products-methods');
 const productElements = [
   {

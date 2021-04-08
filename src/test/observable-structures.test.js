@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 const productMethods = require('../utils/observable-structures');
 const mockedCallback = jest.fn();
 test('checking the created observable object', () => {
