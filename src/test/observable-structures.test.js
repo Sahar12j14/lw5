@@ -1,14 +1,14 @@
 const productMethods = require('../utils/observable-structures');
 const mockedCallback = jest.fn();
 test('checking the created observable object', () => {
-  const testObject = {
+  let testObject = {
     test: 'test',
   };
   const resultList = productMethods.createObservableObject(testObject, mockedCallback);
   resultList.test = 'test2';
   expect(mockedCallback).toHaveBeenCalled();
   mockedCallback.mockClear();
-  testObject = 'test2';
+  resultList.test = 'test2';
   expect(mockedCallback).toHaveBeenCalled();
   //const resultList = productMethods.createObservableObject(testObject, mockedCallback);
   //resultList.test = 'test2';
@@ -19,10 +19,15 @@ test('checking the created observable object', () => {
   //expect(mockCallback.mock.calls.length).toBe(1);
 });
 test('checking the created observable array', () => {
-  const resultList = [1, 2];
+  const resultList = [{id: 1, name:'Тушенка'}];
   let testList = productMethods.createObservableArray(resultList, mockedCallback);
-  expect(productMethods.createObservableArray(testList, 1)).toEqual(false);
-  expect(productMethods.createObservableArray(testList, mockedCallback)).not.toEqual(false);
+  testList[0].name = 'Чеснок';
+  expect(mockedCallback).toHaveBeenCalled();
+  mockedCallback.mockClear();
+  testList[0] = 'Чеснок';
+  expect(mockedCallback).toHaveBeenCalled();
+  //expect(productMethods.createObservableArray(testList, 1)).toEqual(false);
+  //expect(productMethods.createObservableArray(testList, mockedCallback)).not.toEqual(false);
   //expect(mockedCallback).toHaveBeenCalled();
   //mockedCallback.mockClear();
   //expect(productMethods.createObservableArray(testList, 1)).toEqual(false);
