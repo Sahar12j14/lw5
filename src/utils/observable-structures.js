@@ -1,7 +1,3 @@
-/* eslint-disable operator-linebreak */
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-param-reassign */
-
 export function createObservableObject(object, callback) {
   if (
     Array.isArray(object) ||

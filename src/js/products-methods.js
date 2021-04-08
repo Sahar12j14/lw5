@@ -1,8 +1,3 @@
-
-/* eslint-disable no-restricted-globals */
-/* eslint-disable operator-linebreak */
-/* eslint-disable no-param-reassign */
-
 export function countTotal(product) {
   if (product === null || typeof product === 'boolean' || typeof product !== 'object') {
     return false;

@@ -1,4 +1,3 @@
-/* eslint-disable linebreak-style */
 module.exports = {
   env: {
     browser: true,
@@ -15,5 +14,8 @@ module.exports = {
     'comma-dangle': 0,
     'no-loop-func': 0,
     'no-undef': 0,
+    'no-restricted-globals': 0,
+    'operator-linebreak': 0,
+    'no-unused-vars': 0,
   },
 };
